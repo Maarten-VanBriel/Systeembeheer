@@ -6,3 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+zone "maarten-vanbriel.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/db.maarten-vanbriel.sb.uclllabs.be";
+};
