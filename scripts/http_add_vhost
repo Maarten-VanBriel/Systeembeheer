@@ -1,0 +1,26 @@
+#!/bin/bash
+BIND="/etc/bind/db.maarten-vanbriel.sb.uclllabs.be"
+IFS='.'
+#Read the split words into an array based on space delimiter
+read -a strarr <<< "$1"
+domain="${strarr[0]}"
+end="${strarr[1]}.${strarr[2]}.${strarr[3]}.${strarr[4]}"
+echo "$end"
+if [[ "$end" == "maarten-vanbriel.sb.uclllabs.be" ]]
+then
+echo "$domain	IN	A	193.191.177.171" >> "$BIND"
+nummer=$(grep -Po '\d+(?=\s+; Serial)' "$BIND")
+npe=$(($nummer + 1))
+half=$(grep -Po '\s+; Serial' "$BIND")
+full=$(grep -Po '\d+\s+; Serial' "$BIND")
+sed -i "s/$full/$npe$half/g" "$BIND"
+sed "s/hulp/$domain/g" /etc/apache2/sites-available/hulp.conf > /etc/apache2/sites-available/$domain.conf
+a2ensite /etc/apache2/sites-available/$domain.conf
+mkdir /var/www/html/$domain
+touch /var/www/html/$domain/index.html
+echo "$1" >> /var/www/html/$domain/index.html
+systemctl reload bind9
+systemctl reload apache2
+else
+echo "invalid domain name"
+fi

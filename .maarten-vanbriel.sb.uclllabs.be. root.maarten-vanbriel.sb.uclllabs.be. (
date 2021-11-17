@@ -1,0 +1,82 @@
+[33mcommit ee5264e27de7161645e2dcd48b3f2e058f3a2943[m
+Author: Maarten-VanBriel <maarten.vanbriel@student.ucll.be>
+Date:   Wed Nov 17 17:07:37 2021 +0100
+
+    bind update, www1 toegevoegd
+
+[1mdiff --git a/apache2/sites-available/www1.conf b/apache2/sites-available/www1.conf[m
+[1mnew file mode 100644[m
+[1mindex 0000000..04fbc55[m
+[1m--- /dev/null[m
+[1m+++ b/apache2/sites-available/www1.conf[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<VirtualHost *:80>[m
+[32m+[m[32m# This first listed virtual host is also the default for *:80[m
+[32m+[m[32m        ServerName www1.maarten-vanbriel.sb.uclllabs.be[m
+[32m+[m[32m        ServerAlias maarten-vanbriel.sb.uclllabs.be[m
+[32m+[m[32m        DocumentRoot /var/www/html/www1[m
+[32m+[m[32m</VirtualHost>[m
+[1mdiff --git a/apache2/sites-enabled/www1.conf b/apache2/sites-enabled/www1.conf[m
+[1mnew file mode 120000[m
+[1mindex 0000000..7e49ced[m
+[1m--- /dev/null[m
+[1m+++ b/apache2/sites-enabled/www1.conf[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m../sites-available/www1.conf[m
+\ No newline at end of file[m
+[1mdiff --git a/bind/db.maarten-vanbriel.sb.uclllabs.be b/bind/db.maarten-vanbriel.sb.uclllabs.be[m
+[1mindex de90378..52ae9eb 100644[m
+[1m--- a/bind/db.maarten-vanbriel.sb.uclllabs.be[m
+[1m+++ b/bind/db.maarten-vanbriel.sb.uclllabs.be[m
+[36m@@ -3,7 +3,7 @@[m
+ ;[m
+ $TTL	604800[m
+ @	IN	SOA	ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. ([m
+[31m-			      7		; Serial[m
+[32m+[m			[32m      8		; Serial[m
+ 			 604800		; Refresh[m
+ 			  86400		; Retry[m
+ 			2419200		; Expire[m
+[36m@@ -13,6 +13,8 @@[m [m$TTL	604800[m
+ @	IN	A	193.191.177.171[m
+ ns	IN	A	193.191.177.171[m
+ www	IN	A	193.191.177.171[m
+[32m+[m[32mwww1	IN	A	193.191.177.171[m
+[32m+[m[32mwww2	IN	A	193.191.177.171[m
+ @	IN	NS	ns1.uclllabs.be.[m
+ @	IN	NS	ns2.uclllabs.be.[m
+ @	IN	NS	ns.szymon-nidecki.sb.uclllabs.be.[m
+[1mdiff --git a/incron.d/etc.conf b/incron.d/etc.conf[m
+[1mindex 1f2d491..f3fa384 100644[m
+[1m--- a/incron.d/etc.conf[m
+[1m+++ b/incron.d/etc.conf[m
+[36m@@ -82,6 +82,13 @@[m
+ /etc/calendar IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/default IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/rc2.d IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2 IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/sites-enabled IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/conf-available IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/conf-enabled IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/mods-enabled IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/mods-available IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/apache2/sites-available IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/bind IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/rc6.d IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/alternatives IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[36m@@ -91,6 +98,7 @@[m
+ /etc/cron.weekly IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/ufw IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/ufw/applications.d IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/ufw/applications.d/apache2 IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/resolvconf IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/resolvconf/update-libc.d IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/ubuntu-advantage IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[36m@@ -148,6 +156,7 @@[m
+ /etc/mrt/f2d7d4cfee5f575886ea31549a782f9b IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/mrt/9449cf80e664edbd33cc3ef38bb12e90 IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/mrt/6c78c14d4b02cc8be2bfd3ffa31ac7ed IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+[32m+[m[32m/etc/mrt/6ee506d710d8ed6aaee80f46b5449301 IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/mrt/c0f2bfea8630cf525f4f815e2e2cd24a IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/mrt/f5fdc55a67fd46037f8ed2313378e9f3 IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
+ /etc/mrt/1b1313024decadbdeec65e0100a21f7f IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh $@/$#[m
