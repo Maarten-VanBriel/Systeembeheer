@@ -3,8 +3,8 @@ BIND="/etc/bind/db.maarten-vanbriel.sb.uclllabs.be"
 IFS='.'
 #Read the split words into an array based on space delimiter
 read -a strarr <<< "$1"
-domain="${strarr[0]}"
-end="${strarr[1]}.${strarr[2]}.${strarr[3]}.${strarr[4]}"
+domain="${strarr[0]}${strarr[1]}"
+end="${strarr[2]}.${strarr[3]}.${strarr[4]}.${strarr[5]}"
 echo "$end"
 if [[ "$end" == "maarten-vanbriel.sb.uclllabs.be" ]]
 then
@@ -15,10 +15,10 @@ half=$(grep -Po '\s+; Serial' "$BIND")
 full=$(grep -Po '\d+\s+; Serial' "$BIND")
 sed -i "s/$full/$npe$half/g" "$BIND"
 sed "s/hulp/$domain/g" /etc/apache2/sites-available/hulp.conf > /etc/apache2/sites-available/$domain.conf
-a2ensite /etc/apache2/sites-available/$domain.conf
+a2ensite $domain.conf
 mkdir /var/www/html/$domain
 touch /var/www/html/$domain/index.html
-echo "$1" >> /var/www/html/$domain/index.html
+echo "welcome $1" >> /var/www/html/$domain/index.html
 systemctl reload bind9
 systemctl reload apache2
 else

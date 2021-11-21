@@ -1,1 +1,11 @@
-f
+#!/bin/bash
+sed "s/hulp/$1/g" /etc/bind/hulp.conf >> /etc/bind/named.conf.mrt-zones
+sed "s/hulp/$1/g" /etc/bind/db.hulp.maarten-vanbriel.sb.uclllabs.be > /etc/bind/db.$1.maarten-vanbriel.sb.uclllabs.be
+echo "$1	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be." >> /etc/bind/db.maarten-vanbriel.sb.uclllabs.be
+BIND="/etc/bind/db.maarten-vanbriel.sb.uclllabs.be"
+nummer=$(grep -Po '\d+(?=\s+; Serial)' "$BIND")
+npe=$(($nummer + 1))
+half=$(grep -Po '\s+; Serial' "$BIND")
+full=$(grep -Po '\d+\s+; Serial' "$BIND")
+sed -i "s/$full/$npe$half/g" "$BIND"
+systemctl reload bind9
