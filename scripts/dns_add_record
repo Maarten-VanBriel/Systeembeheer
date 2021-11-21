@@ -4,7 +4,7 @@ if [[ "$1" = "-t" ]]
 then
         if [[ "$2" = "A" ]]
         then
-                FILE=/etc/bind/db."$5"
+                FILE=/etc/bind/generated/db."$5"
                 if [[ -f "$FILE" ]]
                 then
                         echo "$3        IN      A       $4" >> "$FILE"
@@ -20,7 +20,7 @@ then
 
         elif [[ "$2" = "MX" ]]
         then
-                FILE=/etc/bind/db."$4"
+                FILE=/etc/bind/generated/db."$4"
                 if [[ -f "$FILE" ]]
                 then
                         echo "$3        IN	CNAMZ       $4." >> "$FILE"
@@ -36,7 +36,7 @@ then
 
         elif [[ "$2" = "CNAME" ]]
         then
-                FILE=/etc/bind/db."$4"
+                FILE=/etc/bind/generated/db."$4"
                 if [[ -f "$FILE" ]]
                 then
 			
@@ -60,7 +60,7 @@ then
         echo "not the correct amount of arguments"
         exit 0
 else
-        FILE=/etc/bind/db."$3"
+        FILE=/etc/bind/generated/db."$3"
         if [[ -f "$FILE" ]]
         then
                 echo "$1        IN      A       $2" >> "$FILE"

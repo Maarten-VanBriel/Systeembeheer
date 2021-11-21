@@ -1,7 +1,7 @@
 ;
 $TTL   604800
 @      IN      SOA     ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. (
-                             113         ; Serial
+                             114         ; Serial
                         604800         ; Refresh
                          86400         ; Retry
                        2419200         ; Expire
@@ -32,3 +32,4 @@ plz	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 subzonethu6ve	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 subzoneiab6av	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 subzoneyei1oh	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+subzoneiy6oos	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
