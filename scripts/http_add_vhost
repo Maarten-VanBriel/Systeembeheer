@@ -14,8 +14,8 @@ npe=$(($nummer + 1))
 half=$(grep -Po '\s+; Serial' "$BIND")
 full=$(grep -Po '\d+\s+; Serial' "$BIND")
 sed -i "s/$full/$npe$half/g" "$BIND"
-sed "s/hulp/$domain/g" /etc/apache2/sites-available/hulp.conf > /etc/apache2/sites-available/"$domain".conf
-a2ensite "$domain".conf
+sed "s/hulp/$domain/g" /etc/apache2/sites-available/hulp.conf > /etc/apache2/sites-available/generated."$domain".conf
+a2ensite generated."$domain".conf
 mkdir /var/www/html/"$domain"
 touch /var/www/html/"$domain"/index.html
 echo "welcome $1" >> /var/www/html/"$domain"/index.html
