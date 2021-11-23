@@ -1,11 +1,13 @@
 ;
 $TTL   604800
 @      IN      SOA     ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. (
-                             207         ; Serial
+                             213         ; Serial
                         604800         ; Refresh
                          86400         ; Retry
                        2419200         ; Expire
                         604800)         ; Negative Cache TTL
+_acme-challenge.secure.maarten-vanbriel.sb.uclllabs.be	IN	TXT "KDTNT9Lp-ROvmFp6otfV6YlKi_-K-LQGcOvXSpW-uio"
+_acme-challenge.supersecure.maarten-vanbriel.sb.uclllabs.be	IN	TXT	"ioJarz1s1Aqo07ib3lhXuX6IAhd9FYcnOjc2R5xt0KM"
 @       IN      A       193.191.177.171
 ns      IN      A       193.191.177.171
 www     IN      A       193.191.177.171
@@ -126,3 +128,8 @@ subzonevudee2	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 uch0oo.subzonevudee2	IN	A	193.191.177.171
 subzoneoz5chi	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 hi7so0.subzoneoz5chi	IN	A	193.191.177.171
+subzoneiehoi5	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+goc9us.subzoneiehoi5	IN	A	193.191.177.171
+secure	IN	A	193.191.177.171
+subzonevei3ph	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+kei7je.subzonevei3ph	IN	A	193.191.177.171
