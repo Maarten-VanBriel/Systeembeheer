@@ -1,7 +1,7 @@
 ;
 $TTL   604800
 @      IN      SOA     ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. (
-                             269         ; Serial
+                             276         ; Serial
                         604800         ; Refresh
                          86400         ; Retry
                        2419200         ; Expire
@@ -23,6 +23,8 @@ test    IN      A       193.191.177.254
 a       IN      A       193.191.177.171
 as      IN      A       193.191.177.171
 q       IN      A       193.191.177.171
+@	IN	MX	10	mx
+mx	IN	A	193.191.177.171
 subzonerei1ba	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 foobar	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 baguette	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
@@ -184,3 +186,7 @@ subzoneoozah5	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 ongui1.subzoneoozah5	IN	A	193.191.177.171
 subzonehex3ei	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 zod9oi.subzonehex3ei	IN	A	193.191.177.171
+subzoneshei3m	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+zod9oi.subzonehex3ei	IN	A	193.191.177.171
+subzonegohy6u	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+zao4ie.subzonegohy6u	IN	A	193.191.177.171
