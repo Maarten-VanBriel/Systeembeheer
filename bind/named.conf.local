@@ -10,6 +10,8 @@ include "/etc/bind/named.conf.mrt-zones";
 zone "maarten-vanbriel.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.maarten-vanbriel.sb.uclllabs.be";
+	allow-transfer {193.191.177.196; 193.191.176.254; 193.191.177.4;};
+	notify yes;
 };
 
 zone "subzonerei1ba.maarten-vanbriel.sb.uclllabs.be" {
