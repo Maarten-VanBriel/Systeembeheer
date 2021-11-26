@@ -1,7 +1,7 @@
 ;
 $TTL   604800
 @      IN      SOA     ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. (
-                             514         ; Serial
+                             537         ; Serial
                         604800         ; Refresh
                          86400         ; Retry
                        2419200         ; Expire
@@ -251,3 +251,26 @@ subzoneye4apu	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 iel0oh.subzoneye4apu	IN	A	193.191.177.171
 subzoneaipee4	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 daeg0u.subzoneaipee4	IN	A	193.191.177.171
+subzonenab8ir	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+eeghu0.subzonenab8ir	IN	A	193.191.177.171
+subzoneoosha5	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+uri9sh.subzoneoosha5	IN	A	193.191.177.171
+subzoneahqu8o	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+oosha3.subzoneahqu8o	IN	A	193.191.177.171
+subzoneat3asa	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+iat5de.subzoneat3asa	IN	A	193.191.177.171
+subzonexah8vi	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+rai8oo.subzonexah8vi	IN	A	193.191.177.171
+rai8oo.subzonexah8vi	IN	A	193.191.177.171
+subzonerai1ah	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+ro8ohg.subzonerai1ah	IN	A	193.191.177.171
+subzoneri0wee	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+ais2ay.subzoneri0wee	IN	A	193.191.177.171
+subzonerahf9j	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+hoo8ee.subzonerahf9j	IN	A	193.191.177.171
+subzonedei6ah	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+iew2ie.subzonedei6ah	IN	A	193.191.177.171
+subzoneeigh6a	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+eix4uz.subzoneeigh6a	IN	A	193.191.177.171
+subzoneaiph2i	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+aesh7a.subzoneaiph2i	IN	A	193.191.177.171
