@@ -1,7 +1,7 @@
 ;
 $TTL   604800
 @      IN      SOA     ns.maarten-vanbriel.sb.uclllabs.be. root.maarten-vanbriel.sb.uclllabs.be. (
-                             1463         ; Serial
+                             1506         ; Serial
                         604800         ; Refresh
                          86400         ; Retry
                        2419200         ; Expire
@@ -9,6 +9,7 @@ $TTL   604800
 ;
 *	IN	A	192.191.177.171
 @	IN	AAAA	2001:6a8:2880:a077::ab
+ns	IN	AAAA	2001:6a8:2880:a077::ab
 @               IN      CAA     0       issue   "letsencrypt.org"
 _acme-challenge	IN	TXT	40F7bQ_ME--ynmZw18OLHcRIfoAFgib3cIKJ0uDVxpM
 _acme-challenge.secure	IN	TXT	iPQZgrQ8MZESGMOyrAtJOYRP3FShdmkbMxyYl7bv8WE
@@ -31,6 +32,7 @@ as      IN      A       193.191.177.171
 q       IN      A       193.191.177.171
 @	IN	MX	10	mx
 mx	IN	A	193.191.177.171
+mx	IN	AAAA	2001:6a8:2880:a077::ab
 subzonerei1ba	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 foobar	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 baguette	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
@@ -1200,3 +1202,37 @@ subzonekeet8z	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 rudai3.subzonekeet8z	IN	A	193.191.177.171
 subzoneroh0eo	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
 ohth7i.subzoneroh0eo	IN	A	193.191.177.171
+subzoneowoh9f	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+och6ji.subzoneowoh9f	IN	A	193.191.177.171
+subzonenei8xa	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+fohf0a.subzonenei8xa	IN	A	193.191.177.171
+subzoneiech2p	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+fohf0a.subzonenei8xa	IN	A	193.191.177.171
+subzoneait5ja	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+zaep1u.subzoneait5ja	IN	A	193.191.177.171
+subzoneoox2oc	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+cha9oh.subzoneoox2oc	IN	A	193.191.177.171
+subzoneyu1eih	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+una3te.subzoneyu1eih	IN	A	193.191.177.171
+subzoneaeka3l	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+sae0gi.subzoneaeka3l	IN	A	193.191.177.171
+subzoneoejay3	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+nahw4m.subzoneoejay3	IN	A	193.191.177.171
+subzonepho7ch	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+oanie3.subzonepho7ch	IN	A	193.191.177.171
+subzonefahch5	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+tijie2.subzonefahch5	IN	A	193.191.177.171
+subzonezec2ca	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+ieri3u.subzonezec2ca	IN	A	193.191.177.171
+subzonetaeja0	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+quei4o.subzonetaeja0	IN	A	193.191.177.171
+subzonezieph2	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+waeme8.subzonezieph2	IN	A	193.191.177.171
+subzonezo3bae	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+ou8iey.subzonezo3bae	IN	A	193.191.177.171
+subzonearah5d	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+phahp8.subzonearah5d	IN	A	193.191.177.171
+subzonewaek5u	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+tooz7t.subzonewaek5u	IN	A	193.191.177.171
+subzoneooc7ze	IN	NS	ns.maarten-vanbriel.sb.uclllabs.be.
+queek1.subzoneooc7ze	IN	A	193.191.177.171
